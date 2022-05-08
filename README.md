@@ -1,3 +1,19 @@
+# 文件结构
+-ApolloDesign/
+  -.vscode/
+    -.settings.json
+  -src/
+    -components/
+    -styles/
+      - _variables.scss(各种变量以及可配置设置)
+      - _mixins.scss(全局 mixins)
+      - _functions.scss(全局 functions)
+    index.tsx
+  package.json
+  package-lock.json
+  tsconfig.json
+  .gitignore
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

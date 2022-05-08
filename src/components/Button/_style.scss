@@ -1,0 +1,32 @@
+.btn{
+  position: relative;
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  color: $body-color;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  background-image: none;
+  border: $btn-border-width solid transparent;
+  @include button-size($btn-padding-x,$btn-padding-y,$btn-font-size,$btn-border-radius);
+  box-shadow: $btn-box-shadow;
+  cursor: pointer;
+  transition: $btn-transition;
+  &.disabled,
+  &[disabled]{
+    cursor: not-allowed;
+    opacity: $btn-disabled-opacity;
+    box-shadow: none;
+    > * {
+      pointer-events: none;
+    }
+  }
+}
+
+.btn-lg{
+  @include button-size($btn-padding-x-lg,$btn-padding-y-lg,$font-size-lg,$btn-border-radius-lg);
+}
+.btn-sm{
+   @include button-size($btn-padding-x-sm,$btn-padding-y-sm,$font-size-sm,$btn-border-radius-sm);
+}
