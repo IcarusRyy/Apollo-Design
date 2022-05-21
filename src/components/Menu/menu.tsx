@@ -12,17 +12,27 @@ export interface MenuProps {
   // 用户定义的行内样式
   style?: React.CSSProperties
   onSelect?: OnSelectCallback
+  defaultOpenSubMenus?: string[]
 }
 // 4、父组件的属性传递给子组件
 interface IMenuContext {
   index: string
   onSelect?: OnSelectCallback
   mode?: MenuMode
+  defaultOpenSubMenus?: string[]
 }
 export const MenuContext = createContext<IMenuContext>({ index: "0" })
 // 2、定义组件
 const Menu: React.FC<MenuProps> = (props) => {
-  const { className, mode, style, children, defaultIndex, onSelect } = props
+  const {
+    className,
+    mode,
+    style,
+    children,
+    defaultIndex,
+    onSelect,
+    defaultOpenSubMenus,
+  } = props
   const [currentActive, setCurrentActive] = useState<string>(
     defaultIndex || "0"
   )
@@ -35,6 +45,8 @@ const Menu: React.FC<MenuProps> = (props) => {
   const passedContext: IMenuContext = {
     index: currentActive,
     onSelect: handleClick,
+    mode,
+    defaultOpenSubMenus,
   }
   // 3、定义组件的class
   // viking-menu 默认的class， className为用户传入的class，默认是horizontal
@@ -71,5 +83,7 @@ Menu.defaultProps = {
   defaultIndex: "0",
   // 默认是横向
   mode: "horizontal",
+  // 纵向的时候  是否默认展开
+  defaultOpenSubMenus: [],
 }
 export default Menu

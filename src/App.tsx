@@ -30,8 +30,9 @@ function App() {
       <Button btnType={ButtonType.Dashed}>dashed Button</Button> */}
       <Menu
         defaultIndex={"0"}
-        mode="horizontal"
+        mode="vertical"
         onSelect={(index) => console.log(index)}
+        defaultOpenSubMenus={["4"]}
       >
         <MenuItem disable={true}>a</MenuItem>
         <MenuItem>b</MenuItem>
