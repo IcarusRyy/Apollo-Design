@@ -1,9 +1,13 @@
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faCoffee, fas } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
 import Button, { ButtonSize, ButtonType } from "./components/Button/button"
+import Icon from "./components/Icon"
 import Menu from "./components/Menu/menu"
 import MenuItem from "./components/Menu/menuItem"
 import SubMenu from "./components/Menu/subMenu"
-
+library.add(fas)
 function App() {
   return (
     <div className="App">
@@ -30,7 +34,7 @@ function App() {
       <Button btnType={ButtonType.Dashed}>dashed Button</Button> */}
       <Menu
         defaultIndex={"0"}
-        mode="vertical"
+        // mode="vertical"
         onSelect={(index) => console.log(index)}
         defaultOpenSubMenus={["4"]}
       >
@@ -44,6 +48,7 @@ function App() {
           <MenuItem>c2</MenuItem>
         </SubMenu>
       </Menu>
+      {/* <FontAwesomeIcon icon={faCoffee} size="10x" /> */}
     </div>
   )
 }
