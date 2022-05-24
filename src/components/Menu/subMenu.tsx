@@ -19,6 +19,8 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(isOpen)
   const classes = classNames("menu-item submenu-item", className, {
     "is-active": context.index === index,
+    "is-opened": menuOpen,
+    "is-vertical": context.mode === "vertical",
   })
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault()

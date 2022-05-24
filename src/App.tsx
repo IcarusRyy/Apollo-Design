@@ -34,7 +34,7 @@ function App() {
       <Button btnType={ButtonType.Dashed}>dashed Button</Button> */}
       <Menu
         defaultIndex={"0"}
-        // mode="vertical"
+        mode="vertical"
         onSelect={(index) => console.log(index)}
         defaultOpenSubMenus={["4"]}
       >
